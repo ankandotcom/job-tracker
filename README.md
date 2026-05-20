@@ -4,7 +4,7 @@ A full-stack job application tracker with AI-powered **JD auto-fill** and **Resu
 
 **[Live Demo Link →](https://job-tracker-19el.onrender.com)**
 
---
+-
 
 ## Tech stack
 
