@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrackMyJobs — Applications</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
+  <div class="page">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem">
+        <h1 style="font-size:20px;font-weight:600">Applications</h1>
+        <a class="btn btn-primary" href="/application-form.html">+ Add application</a>
+      </div>
+
+      <!-- Filters -->
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1.25rem;align-items:center">
+        <select id="filter-status" style="width:auto;padding:.45rem .75rem">
+          <option value="">All statuses</option>
+          <option value="applied">Applied</option>
+          <option value="screening">Screening</option>
+          <option value="interview">Interview</option>
+          <option value="offer">Offer</option>
+          <option value="rejected">Rejected</option>
+          <option value="withdrawn">Withdrawn</option>
+        </select>
+        <select id="filter-sort" style="width:auto;padding:.45rem .75rem">
+          <option value="applied_at">Sort: Date applied</option>
+          <option value="updated_at">Sort: Last updated</option>
+          <option value="ai_score">Sort: AI score</option>
+          <option value="company">Sort: Company</option>
+        </select>
+        <select id="filter-order" style="width:auto;padding:.45rem .75rem">
+          <option value="DESC">Newest first</option>
+          <option value="ASC">Oldest first</option>
+        </select>
+        <span id="count-label" class="text-sm text-muted"></span>
+      </div>
+
+      <!-- Table -->
+      <div class="card" style="padding:0;overflow:hidden">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>AI score</th>
+                <th>Salary</th>
+                <th>Applied</th>
+                <th></th><th></th>
+              </tr>
+            </thead>
+            <tbody id="apps-body">
+              <tr>
+                <td colspan="7" style="text-align:center;padding:2.5rem;color:var(--muted)">Loading…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/api.js"></script>
+  <script src="/js/applications.js"></script>
+</body>
+
+</html>

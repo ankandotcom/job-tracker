@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrackMyJobs — Dashboard</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
+  <div class="page">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem">
+        <h1 style="font-size:20px;font-weight:600">Dashboard</h1>
+        <a class="btn btn-primary" href="/application-form.html">+ Add application</a>
+      </div>
+
+      <!-- Stat cards -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:1.5rem">
+        <div class="card card-sm" style="text-align:center">
+          <div style="font-size:28px;font-weight:600;color:var(--purple)" id="stat-total">—</div>
+          <div class="text-muted text-sm">Total</div>
+        </div>
+        <div class="card card-sm" style="text-align:center">
+          <div style="font-size:28px;font-weight:600;color:#0C447C" id="stat-applied">—</div>
+          <div class="text-muted text-sm">Applied</div>
+        </div>
+        <div class="card card-sm" style="text-align:center">
+          <div style="font-size:28px;font-weight:600;color:var(--amber)" id="stat-interview">—</div>
+          <div class="text-muted text-sm">Interviews</div>
+        </div>
+        <div class="card card-sm" style="text-align:center">
+          <div style="font-size:28px;font-weight:600;color:var(--green)" id="stat-offer">—</div>
+          <div class="text-muted text-sm">Offers</div>
+        </div>
+        <div class="card card-sm" style="text-align:center">
+          <div style="font-size:28px;font-weight:600;color:var(--red)" id="stat-rejected">—</div>
+          <div class="text-muted text-sm">Rejected</div>
+        </div>
+      </div>
+
+      <!-- Recent applications -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+          <h2 style="font-size:15px;font-weight:600">Recent applications</h2>
+          <a href="/applications.html" class="text-sm" style="color:var(--purple)">View all →</a>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Score</th>
+                <th>Applied</th>
+              </tr>
+            </thead>
+            <tbody id="recent-body">
+              <tr>
+                <td colspan="5" style="text-align:center;color:var(--muted);padding:2rem">Loading…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/api.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+
+</html>

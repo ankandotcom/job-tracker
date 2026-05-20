@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrackMyJobs — Application</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
+  <div class="page">
+    <div class="container" style="max-width:780px">
+
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem">
+        <div>
+          <a href="/applications.html" class="text-sm text-muted" style="text-decoration:none">← Applications</a>
+          <h1 style="font-size:20px;font-weight:600;margin-top:.25rem" id="detail-title">Loading…</h1>
+          <p class="text-muted text-sm" id="detail-sub"></p>
+        </div>
+        <div style="display:flex;gap:.5rem">
+          <a id="edit-btn" href="#" class="btn btn-ghost btn-sm">Edit</a>
+          <button id="delete-btn" class="btn btn-danger btn-sm">Delete</button>
+        </div>
+      </div>
+
+      <div class="card card-sm" style="margin-bottom:1rem;display:flex;gap:1.5rem;flex-wrap:wrap">
+        <div>
+          <div class="text-muted text-sm">Status</div>
+          <div id="detail-status" style="margin-top:.25rem"></div>
+        </div>
+        <div>
+          <div class="text-muted text-sm">Applied</div>
+          <div id="detail-date" style="margin-top:.25rem;font-size:13px"></div>
+        </div>
+        <div>
+          <div class="text-muted text-sm">Salary range</div>
+          <div id="detail-salary" style="margin-top:.25rem;font-size:13px"></div>
+        </div>
+        <div>
+          <div class="text-muted text-sm">URL</div>
+          <div id="detail-url" style="margin-top:.25rem;font-size:13px"></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:1rem">
+        <div style="font-weight:500;margin-bottom:.5rem">Notes</div>
+        <div id="detail-notes" class="text-sm" style="white-space:pre-wrap;color:var(--muted)">—</div>
+      </div>
+
+      <div class="card" style="border:1px solid #AFA9EC">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem">
+          <div>
+            <div style="font-weight:600;font-size:14px;color:#3C3489">Resume gap analyser</div>
+            <div class="text-sm" style="color:#534AB7;margin-top:2px">AI compares your resume to this role and surfaces
+              gaps + rewrites</div>
+          </div>
+          <button id="gap-btn" class="btn btn-sm" style="background:#534AB7;color:#EEEDFE">Analyse fit</button>
+        </div>
+
+        <div id="gap-no-resume"
+          style="display:none; padding:.75rem; background:#FAEEDA; border-radius:8px; font-size:13px; color:#633806;">
+          No resume on file. <a href="/profile.html" style="color:#854F0B;font-weight:500">Add your resume on the
+            Profile page</a> to use this feature.
+        </div>
+
+        <div id="gap-result" style="display:none;flex-direction:column;gap:1rem">
+          <div
+            style="display:flex;align-items:center;gap:1rem;padding:.75rem;background:var(--bg);border-radius:8px;border:1px solid var(--border)">
+            <span class="score-badge" id="gap-score-badge">—</span>
+            <div>
+              <div style="font-weight:500;font-size:14px" id="gap-verdict"></div>
+              <div class="text-sm text-muted" id="gap-summary"></div>
+            </div>
+          </div>
+          <div>
+            <div class="text-sm" style="font-weight:500;margin-bottom:.4rem;color:var(--green)">Matching strengths</div>
+            <div class="pill-list" id="gap-strengths"></div>
+          </div>
+          <div>
+            <div class="text-sm" style="font-weight:500;margin-bottom:.4rem;color:var(--red)">Missing / weak areas</div>
+            <div class="pill-list" id="gap-gaps"></div>
+          </div>
+          <div>
+            <div class="text-sm" style="font-weight:500;margin-bottom:.5rem">Suggested resume rewrites</div>
+            <div id="gap-rewrites" style="display:flex;flex-direction:column;gap:.5rem"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:1rem">
+        <div style="font-weight:500;margin-bottom:.75rem">Status history</div>
+        <div id="history-list" class="text-sm text-muted">Loading…</div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/application-detail.js"></script>
+</body>
+
+</html>
