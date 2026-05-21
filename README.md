@@ -1,6 +1,6 @@
 # TrackMyJobs
 
-A full-stack job application tracker with AI-powered **JD auto-fill** and **Resume gap analyser**, built with Node.js, Express, PostgreSQL, and the Anthropic API.
+A full-stack job application tracker with AI-powered **JD auto-fill** and **Resume gap analyser**, built with Node.js, Express, PostgreSQL, and Google Gemini API.
 
 **[Live Demo Link →](https://job-tracker-19el.onrender.com)**
 
@@ -9,11 +9,11 @@ A full-stack job application tracker with AI-powered **JD auto-fill** and **Resu
 
 | Layer      | Technology                              |
 |------------|-----------------------------------------|
-| Frontend   | HTML · Tailwind-inspired CSS · Vanilla JS (ES modules) |
+| Frontend   | HTML · Tailwind-inspired CSS · JS  |
 | Backend    | Node.js · Express                        |
 | Database   | PostgreSQL                               |
 | Auth       | JWT (access + refresh tokens, httpOnly cookie) |
-| AI         | Anthropic API — `claude-sonnet-4-20250514` |
+| AI         | GEMINNI API |
 
 ---
 
@@ -84,7 +84,7 @@ PORT=3000
 DATABASE_URL=postgresql://user:password@localhost:5432/job_tracker
 JWT_ACCESS_SECRET=<generate: node -e "console.log(require('crypto').randomBytes(64).toString('hex'))">
 JWT_REFRESH_SECRET=<generate same way>
-ANTHROPIC_API_KEY=sk-ant-...
+GEMINI_API_KEY=sk-ant-...
 NODE_ENV=development
 CLIENT_URL=http://localhost:3000
 ```

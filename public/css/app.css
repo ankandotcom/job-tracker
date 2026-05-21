@@ -109,9 +109,56 @@ tbody tr:hover { background: var(--bg); }
 .hidden { display: none !important; }
 
 /* Auth page */
-.auth-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-.auth-card { width: 100%; max-width: 400px; }
-.auth-logo { font-size: 22px; font-weight: 600; color: var(--purple); margin-bottom: 1.5rem; text-align: center; }
+/* Auth page container matching your new background design */
+.auth-page { 
+  min-height: 100vh; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  position: relative;
+  overflow: hidden;
+
+  /* 1. Base color and the clean geometric background grid lines */
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(to right, #f0f0f0 1px, transparent 1px),
+    linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
+  background-size: 6rem 4rem;
+}
+
+/* 2. The ambient radial blue spotlight overlay effect */
+.auth-page::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle 500px at 50% 200px, #C9EBFF, transparent);
+  z-index: 1;
+  pointer-events: none; /* Allows clicks to pass through to items underneath */
+}
+
+/* 3. Force the card to sit safely on top of the background layers */
+.auth-card { 
+  width: 100%; 
+  max-width: 400px; 
+  position: relative;
+  z-index: 10; /* Lifts card above the ::before spotlight layer */
+  background: rgba(255, 255, 255, 0.9); /* Slight white transparency */
+  backdrop-filter: blur(8px); /* Optional soft glass effect over the grid lines */
+}
+
+.auth-logo { 
+  font-size: 22px; 
+  font-weight: 600; 
+  color: var(--purple); 
+  margin-bottom: 1.5rem; 
+  text-align: center; 
+}
+
+/* Keep your centered auth button rule */
+.auth-card .btn {
+  justify-content: center;
+  width: 100%; 
+}
 
 /* Empty state */
 .empty { text-align: center; padding: 3rem 1rem; color: var(--muted); }
